@@ -27,13 +27,12 @@ const REGIONS = [
 ];
 
 const BILIM_OPTIONS = [
-  { val: 'Dasturlash / IT',            icon: '💻' },
-  { val: 'Biznes / Tadbirkorlik',      icon: '📊' },
-  { val: 'Tillar (Ingliz, Arab…)',     icon: '🗣️' },
-  { val: 'Tibbiyot / Sog'liq',        icon: '🏥' },
-  { val: 'Muhandislik / Arxitektura',  icon: '🏗️' },
-  { val: 'Ijodiyot / San'at / Design', icon: '🎨' },
-];
+  { val: 'Dasturlash / IT',             icon: '💻' },
+  { val: 'Biznes / Tadbirkorlik',       icon: '📊' },
+  { val: 'Tillar (Ingliz, Arab…)',      icon: '🗣️' },
+  { val: "Tibbiyot / Sog'liq",          icon: '🏥' }, 
+  { val: 'Muhandislik / Arxitektura',   icon: '🏗️' },
+  { val: 'Ijodiyot / San\'at / Design', icon: '🎨' },
 
 const TOSIQ_OPTIONS = [
   { val: 'Telefon va ijtimoiy tarmoqlar',       icon: '📱' },
