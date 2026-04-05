@@ -1,6 +1,3 @@
-// ═══════════════════════════════════════════
-//  screens/OnboardingScreen.tsx
-// ═══════════════════════════════════════════
 import React, { useState } from 'react';
 import type { Profile, TelegramUser } from '../types';
 
@@ -32,16 +29,15 @@ const BILIM_OPTIONS = [
   { val: 'Tillar (Ingliz, Arab…)',      icon: '🗣️' },
   { val: "Tibbiyot / Sog'liq",          icon: '🏥' }, 
   { val: 'Muhandislik / Arxitektura',   icon: '🏗️' },
-  { val: 'Ijodiyot / San\'at / Design', icon: '🎨' }, 
+  { val: "Ijodiyot / San'at / Design",  icon: '🎨' }, 
 ];
 
 const TOSIQ_OPTIONS = [
   { val: 'Telefon va ijtimoiy tarmoqlar',      icon: '📱' },
-  { val: 'Ertalab uyg\'onish qiyinligi',       icon: '😴' }, 
-  { val: 'Motivatsiya yo\'qligi',              icon: '😶' }, 
-  { val: 'Atrofdagilar ta\'siri',              icon: '👥' }, 
+  { val: "Ertalab uyg'onish qiyinligi",        icon: '😴' }, 
+  { val: "Motivatsiya yo'qligi",               icon: '😶' }, 
+  { val: "Atrofdagilar ta'siri",               icon: '👥' }, 
   { val: 'Rejasizlik',                         icon: '🗺️' },
-];val: 'Rejasizlik',                           icon: '🗺️' },
 ];
 
 const SHIOR_OPTIONS = [
@@ -88,20 +84,19 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
   const [step, setStep] = useState(1);
   const [err, setErr]   = useState('');
 
-  // Form data
   const [firstName, setFirstName] = useState(telegramUser?.first_name || '');
   const [lastName,  setLastName]  = useState(telegramUser?.last_name  || '');
   const [nickname,  setNickname]  = useState(telegramUser?.username   || '');
-  const [age,       setAge]       = useState('');
+  const [age,        setAge]       = useState('');
   const [nation,    setNation]    = useState('');
   const [country,   setCountry]   = useState('uz');
   const [region,    setRegion]    = useState('');
-  const [shior,     setShior]     = useState('');
+  const [shior,      setShior]     = useState('');
   const [shiorCustom, setShiorCustom] = useState('');
-  const [bilim,     setBilim]     = useState('');
+  const [bilim,      setBilim]     = useState('');
   const [choqqi,    setChoqqi]    = useState('');
-  const [tosiq,     setTosiq]     = useState('');
-  const [ideal,     setIdeal]     = useState('');
+  const [tosiq,      setTosiq]     = useState('');
+  const [ideal,      setIdeal]     = useState('');
 
   const pct = ((step - 1) / TOTAL) * 100;
 
@@ -150,7 +145,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
 
   return (
     <div style={{ minHeight: '100vh', background: '#0a0a0f', color: '#fff' }}>
-      {/* Progress */}
       <div style={{
         padding: '20px 24px 16px',
         position: 'sticky', top: 0, zIndex: 10,
@@ -171,8 +165,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
       </div>
 
       <div style={{ padding: '24px 24px 80px', maxWidth: 480, margin: '0 auto' }}>
-
-        {/* Error */}
         {err && (
           <div style={{
             background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)',
@@ -180,7 +172,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           }}>{err}</div>
         )}
 
-        {/* ── Step 1: Name ── */}
         {step === 1 && (
           <Step icon="👋" title="Ismingiz va Familiyangiz" hint="Profilingizda ko'rsatiladigan ma'lumotlar">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
@@ -188,13 +179,9 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
               <Inp value={lastName}  onChange={e => setLastName(e.target.value)}  placeholder="Familiyangiz" style={{ margin: 0 }} />
             </div>
             <Inp value={nickname} onChange={e => setNickname(e.target.value)} placeholder="Nickname (reyting uchun)" />
-            <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: -6, marginBottom: 10 }}>
-              Masalan: AlpinistAli, ZafarX, NightOwl
-            </div>
           </Step>
         )}
 
-        {/* ── Step 2: Demographics ── */}
         {step === 2 && (
           <Step icon="🌍" title="Demografik ma'lumotlar" hint="Statistika va maqsad tahlili uchun">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -216,7 +203,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 3: Shior ── */}
         {step === 3 && (
           <Step icon="⚡" title="Hayotiy tamoyilingiz nima?" hint="Sizni oldinga haydaydigan asosiy g'oya">
             {SHIOR_OPTIONS.map(opt => (
@@ -228,7 +214,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 4: Bilim ── */}
         {step === 4 && (
           <Step icon="📚" title="Qaysi sohani o'rganmoqdasiz?" hint="Asosiy o'rganish yo'nalishingiz">
             {BILIM_OPTIONS.map(o => (
@@ -239,13 +224,12 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 5: Choqqi ── */}
         {step === 5 && (
           <Step icon="🏔️" title="1 yillik eng katta maqsadingiz?" hint="Aniq, o'lchanadigan va real maqsad yozing">
             <textarea
               value={choqqi}
               onChange={e => setChoqqi(e.target.value)}
-              placeholder="Masalan: 2026 yil oxirigacha o'z startapimni ochib, birinchi 100 ta mijozga ega bo'laman..."
+              placeholder="Masalan: 2026 yil oxirigacha o'z startapimni ochib..."
               style={{
                 width: '100%', minHeight: 130, resize: 'none',
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
@@ -257,7 +241,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 6: To'siq ── */}
         {step === 6 && (
           <Step icon="🚧" title="Intizomingizga nima xalaqit beradi?" hint="Asosiy to'siqni aniqlasak, yechim topamiz">
             {TOSIQ_OPTIONS.map(o => (
@@ -268,13 +251,12 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 7: Ideal kun ── */}
         {step === 7 && (
           <Step icon="🌅" title="Sen uchun ideal kun qanday?" hint="Erkin, o'z so'zlaringiz bilan tasvirlab bering">
             <textarea
               value={ideal}
               onChange={e => setIdeal(e.target.value)}
-              placeholder="Masalan: 3:00 da uyg'onaman. Meditatsiya, sport. Chuqur ishlash. Oila bilan kechki vaqt. Kitob o'qib uxlayman..."
+              placeholder="Masalan: 3:00 da uyg'onaman..."
               style={{
                 width: '100%', minHeight: 140, resize: 'none',
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
@@ -286,7 +268,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* ── Step 8: Summary ── */}
         {step === 8 && (
           <Step icon="🛡️" title="Tayyor! Ma'lumotlaringizni tekshiring" hint="Hammasi to'g'ri bo'lsa, saqlang">
             <div style={{
@@ -296,7 +277,7 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
               {[
                 ['👤 Ism',       `${firstName} ${lastName} (@${nickname})`],
                 ['🎂 Yosh',      `${age} yosh • ${nation || '—'}`],
-                ['📍 Viloyat',   REGIONS.find(r => r.value === region)?.label || region || '—'],
+                ['📍 Viloyat',    REGIONS.find(r => r.value === region)?.label || region || '—'],
                 ['⚡ Shior',     shiorCustom || shior || '—'],
                 ['📚 Soha',      bilim || '—'],
                 ['🏔️ Maqsad',    choqqi.substring(0, 70) + (choqqi.length > 70 ? '…' : '')],
@@ -315,7 +296,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
           </Step>
         )}
 
-        {/* Navigation */}
         <div style={{ display: 'flex', gap: 10, marginTop: 8 }}>
           {step > 1 && (
             <button onClick={() => { setErr(''); setStep(s => s - 1); }} style={{
@@ -339,7 +319,6 @@ export const OnboardingScreen: React.FC<Props> = ({ telegramUser, onComplete }) 
   );
 };
 
-// ── Sub-components ───────────────────────────
 const Step: React.FC<{
   icon: string; title: string; hint: string; children: React.ReactNode;
 }> = ({ icon, title, hint, children }) => (
