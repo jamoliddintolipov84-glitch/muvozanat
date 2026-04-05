@@ -32,14 +32,16 @@ const BILIM_OPTIONS = [
   { val: 'Tillar (Ingliz, Arab…)',      icon: '🗣️' },
   { val: "Tibbiyot / Sog'liq",          icon: '🏥' }, 
   { val: 'Muhandislik / Arxitektura',   icon: '🏗️' },
-  { val: 'Ijodiyot / San\'at / Design', icon: '🎨' },
+  { val: 'Ijodiyot / San\'at / Design', icon: '🎨' }, 
+];
 
 const TOSIQ_OPTIONS = [
-  { val: 'Telefon va ijtimoiy tarmoqlar',       icon: '📱' },
-  { val: 'Ertalab uyg\'onish qiyinligi',        icon: '😴' },
-  { val: 'Motivatsiya yo\'qligi',               icon: '😶' },
-  { val: 'Atrofdagilar ta\'siri',               icon: '👥' },
-  { val: 'Rejasizlik',                           icon: '🗺️' },
+  { val: 'Telefon va ijtimoiy tarmoqlar',      icon: '📱' },
+  { val: 'Ertalab uyg\'onish qiyinligi',       icon: '😴' }, 
+  { val: 'Motivatsiya yo\'qligi',              icon: '😶' }, 
+  { val: 'Atrofdagilar ta\'siri',              icon: '👥' }, 
+  { val: 'Rejasizlik',                         icon: '🗺️' },
+];val: 'Rejasizlik',                           icon: '🗺️' },
 ];
 
 const SHIOR_OPTIONS = [
