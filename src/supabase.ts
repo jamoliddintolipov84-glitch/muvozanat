@@ -3,7 +3,7 @@
 //  Supabase client + all DB helpers
 // ═══════════════════════════════════════════
 import { createClient } from '@supabase/supabase-js';
-import type { Profile, Habit, HabitLog, Transaction, Goal, Note } from '../types';
+import type { Profile, Habit, HabitLog, Transaction, Goal, Note } from './types';
 
 // ── Config ─────────────────────────────────
 const SUPABASE_URL  = import.meta.env.VITE_SUPABASE_URL  || '';
