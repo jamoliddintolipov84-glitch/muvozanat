@@ -12,7 +12,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     
-    /* Xatolarni kamaytirish uchun o'zgarishlar */
     "strict": false,
     "noImplicitAny": false,
     "baseUrl": ".",
@@ -24,5 +23,11 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }
