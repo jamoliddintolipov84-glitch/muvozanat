@@ -2,7 +2,7 @@
 //  lib/telegram.ts
 //  Telegram Mini App WebApp integration
 // ═══════════════════════════════════════════
-import type { TelegramUser } from '../types';
+import type { TelegramUser } from './types';
 
 // Telegram Bot Token is ONLY used server-side (Supabase Edge Function).
 // Never expose it in frontend code.
