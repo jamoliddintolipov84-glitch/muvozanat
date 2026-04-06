@@ -1,16 +1,18 @@
 // ═══════════════════════════════════════════
 //  App.tsx — Muvozanat Life Navigator v3
-//  Central router + state orchestration
 // ═══════════════════════════════════════════
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import type { Profile, Habit, Transaction, Goal, Note, AIMessage, Screen, TelegramUser } from './types';
-import { AIMentorWidget }     from './components/AIMentorWidget';
-import { TimeBlockCalendar }  from './components/TimeBlockCalendar';
-import { OnboardingScreen }   from './screens/OnboardingScreen';
-import { useAppStore }        from './hooks/useLocalStore';
+
+import AIMentorWidget      from './AIMentorWidget'; 
+import TimeBlockCalendar   from './TimeBlockCalendar';
+import OnboardingScreen    from './OnboardingScreen';
+import { useAppStore }     from './useLocalStore';
+
 import {
   initTelegramApp, getTelegramUser, isTelegramApp, haptic,
-} from './lib/telegram';
+} from './telegram';
+
 import {
   isSupabaseReady, getProfile, upsertProfile, getHabits,
   createHabit, getTransactions, addTransaction as dbAddTransaction,
@@ -18,7 +20,7 @@ import {
   getLeaderboard, logHabit, addXP as dbAddXP,
   signInWithEmail, signUpWithEmail, signInWithTelegram,
   getSession,
-} from './lib/supabase';
+} from './supabase';
 
 // ── Helpers ──────────────────────────────────
 const today = () => new Date().toISOString().split('T')[0];
