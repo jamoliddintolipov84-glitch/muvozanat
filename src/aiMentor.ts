@@ -2,7 +2,9 @@
 //  lib/aiMentor.ts
 //  AI Mentor — powered by Claude API
 // ═══════════════════════════════════════════
-import type { Profile, Habit } from '../types';
+import type { Profile, Habit, AIMessage } from './types';
+// '../lib/aiMentor' emas, './aiMentor'
+import { getAIAdvice } from './aiMentor';
 
 const ANTHROPIC_API = 'https://api.anthropic.com/v1/messages';
 
