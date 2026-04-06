@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Profile, TelegramUser } from '../types';
+import type { Profile, TelegramUser } from './types';
 
 interface Props {
   telegramUser: TelegramUser | null;
