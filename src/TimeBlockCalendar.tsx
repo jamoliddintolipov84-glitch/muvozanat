@@ -3,7 +3,7 @@
 //  24-hour vertical timeline with habit blocks
 // ═══════════════════════════════════════════
 import React, { useState, useRef, useEffect } from 'react';
-import type { Habit } from '../types';
+import type { TimeBlock } from './types';
 
 interface Props {
   habits: Habit[];
